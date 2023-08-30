@@ -1,0 +1,27 @@
+#cedula {
+    margin: 10px 0 10px 10px;
+}
+
+.input-usuario {
+    display: block;
+    margin: 0 0 20px 5px;
+    padding: 10px 25px;
+    width: 40%;
+}
+
+.nombre-apellido{
+    display: flex;
+    justify-content: space-between;
+}
+
+.contenedor-nombre, .contenedor-apellido {
+    width: 48%; 
+}
+
+.contenedor-nombre2, .contenedor-apellido2 {
+    margin-top: 16px;
+    width: 48%; 
+}
+
+
+

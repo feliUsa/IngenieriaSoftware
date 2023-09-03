@@ -7,11 +7,75 @@
         <meta name="viewport" content="width=device-width">
         <title>Facturación</title>
         <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="reset.css">
+        <!--<link rel="stylesheet" href="reset.css">-->
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     </head>
 
     <body>
-        <header>
+            <div class="sideBar">
+
+                <div class="top">
+                    <div class="logo">
+                        <i class="bx bxl-codepen"></i>
+                        <span>Nombre Empresa</span>
+                    </div>
+                    <i class="bx bx-menu" id="btn"></i>
+                </div> 
+
+                <div class="user">
+                    <img src="Imagenes/logo.png" alt="logotype" class="usr-img">
+                    <div>
+                        <p class="bold">Nombre Usuario</p>
+                        <p>Admin</p>
+                    </div>
+                </div>
+
+                <ul>
+                    <li>
+                       <a href="#">
+                        <i class="bx bx-log-in-circle"></i>
+                        <span class="nav-item">Login</span>
+                       </a>
+                       <span class="tooltip">Login</span>
+                    </li>
+                   
+                    <li>
+                        <a href="index.html">
+                         <i class="bx bx-wallet"></i>
+                         <span class="nav-item">Billing</span>
+                        </a>
+                        <span class="tooltip">Billing</span>
+                     </li>
+
+                     <li>
+                        <a href="#">
+                         <i class="bx bx-cog"></i>
+                         <span class="nav-item">Settings</span>
+                        </a>
+                        <span class="tooltip">Settings</span>
+                     </li>
+
+                     <li>
+                        <a href="#">
+                         <i class="bx bxs-contact"></i>
+                         <span class="nav-item">Contact</span>
+                        </a>
+                        <span class="tooltip">Contact</span>
+                     </li>
+
+                     <li>
+                        <a href="#">
+                         <i class="bx bx-log-out"></i>
+                         <span class="nav-item">Logout</span>
+                        </a>
+                        <span class="tooltip">Logout</span>
+                     </li>
+
+                </ul>
+                
+            </div>
+
+        <div class="main-content">
             <form>
                 <div>
                     <label for="cedula" id="ced">Cedula</label>
@@ -22,9 +86,62 @@
 
                 </div>
             </form>
-        </header>
+
+            <form>
+                <div>
+                    <label for="cedula">Cedula</label>
+                    <input type="tel" id="cedula" class="input-usuario" required>
+
+                    <div class="nombre-apellido">
+
+                        <div class="contenedor-nombre">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" id="nombre" class="input-usuario" required>
+                        </div>
+
+                        <div class="contenedor-nombre2">
+                            <input type="text" id="segundoNombre" class="input-usuario">
+                        </div>
+
+                        <div class="contenedor-apellido">
+                            <label for="apellido">Apellido</label>
+                            <input type="text" id="apellido" class="input-usuario" required>
+                        </div>
+
+                        <div class="contenedor-apellido2">
+                            <input type="text" id="segundoApellido" class="input-usuario">
+                        </div>
+                            
+                    </div>
+                    
         
+                    <label for="telefono">Telefono</label>
+                    <input type="tel" id="telefono" class="input-usuario" >
+        
+                    <label for="correo">Correo</label>
+                    <input type="email" id="correo" class="input-usuario" required>
+        
+                    <label for="mensaje">Dirección</label>
+                    <textarea id="mensaje" cols="68" rows="5" class="input-usuario"></textarea>
+                </div>
+            </form>
+        </div>
+        
+
+        <!--
         <main>
+
+            <form>
+                <div>
+                    <label for="cedula" id="ced">Cedula</label>
+                    <input type="text" id="cedula" required class="input-vendedor">
+
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" required class="input-vendedor">
+
+                </div>
+            </form>
+
             <form>
                 <div>
                     <label for="cedula">Cedula</label>
@@ -64,11 +181,21 @@
                 </div>
             </form>
         </main>
+        -->
 
-        <footer>
+        
 
         </footer>
-        
+
     </body>
+
+<script>
+    let btn = document.querySelector('#btn')
+    let sidebar = document.querySelector('.sideBar')
+
+    btn.onclick = function(){
+        sidebar.classList.toggle('active');
+    };
+</script>
 
 </html>

@@ -2,7 +2,7 @@
     margin:0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  
+    font-family: Calisto MT, Bookman Old Style, Bookman, Goudy Old Style, Garamond, Hoefler Text, Bitstream Charter, Georgia, serif;
 }
 
 .usr-img {
@@ -150,41 +150,117 @@
 
 .main-content{
     position: relative;
-    background-color: #eee;
+    /*background-color: #eee;*/
     min-height: 100vh;
     top: 0;
     left: 80px;
+    padding-left: 10%;
     transition: all 0.5s ease;
     width: calc(100% - 80px);
 }
 
 /*-------------------------------------*/
 
-
-/*#cedula {
-    margin: 10px 0 10px 10px;
+.dataUser{
+    position:relative; 
+    margin-bottom:45px; 
 }
 
-.input-usuario {
-    display: block;
-    margin: 0 0 20px 5px;
-    padding: 10px 25px;
-    width: 40%;
+.client{
+    position:relative; 
+    margin-bottom:45px; 
 }
 
-.nombre-apellido{
-    display: flex;
-    justify-content: space-between;
+input{
+    font-size:18px;
+    padding:10px 10px 10px 5px;
+    display:block;
+    width:300px;
+    border:none;
+    border-bottom:1px solid #757575;
 }
 
-.contenedor-nombre, .contenedor-apellido {
-    width: 48%; 
+input:focus{ 
+    outline:none; 
 }
 
-.contenedor-nombre2, .contenedor-apellido2 {
-    margin-top: 16px;
-    width: 48%; 
+label{
+    color:#999; 
+    font-size:18px;
+    font-weight:normal;
+    position:absolute;
+    pointer-events:none;
+    left:5px;
+    top:10px;
+    transition:0.2s ease all; 
+    -moz-transition:0.2s ease all; 
+    -webkit-transition:0.2s ease all;
 }
-*/
 
+input:focus ~ label, input:valid ~ label{
+    top:-20px;
+    font-size:14px;
+    color:#5264AE;
+}
 
+.bar{ 
+    position:relative; 
+    display:block; 
+    width:300px; 
+}
+
+.bar:before, .bar:after{
+  content:'';
+  height:2px; 
+  width:0;
+  bottom:1px; 
+  position:absolute;
+  background:#5264AE; 
+  transition:0.2s ease all; 
+  -moz-transition:0.2s ease all; 
+  -webkit-transition:0.2s ease all;
+}
+
+.bar:before {
+  left:50%;
+}
+
+.bar:after {
+  right:50%; 
+}
+
+/* active state */
+input:focus ~ .bar:before, input:focus ~ .bar:after {
+  width:50%;
+}
+
+.highlight{
+    position:absolute;
+    height:60%; 
+    width: 20px; 
+    top:25%; 
+    left:0;
+    pointer-events:none;
+    opacity:0.5;
+}
+  
+/* active state */
+input:focus ~ .highlight {
+    -webkit-animation:inputHighlighter 0.3s ease;
+    -moz-animation:inputHighlighter 0.3s ease;
+    animation:inputHighlighter 0.3s ease;
+  }
+  
+/* ANIMATIONS ================ */
+@-webkit-keyframes inputHighlighter {
+	from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
+@-moz-keyframes inputHighlighter {
+	from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
+@keyframes inputHighlighter {
+	from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}

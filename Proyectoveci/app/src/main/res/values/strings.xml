@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Proyecto veci</string>
+    <string name="perfil">Perfil</string>
+
+    <string name="bar_title">Que mas veci?</string>
+    <string name="navigation_drawer_open">Menu</string>
+    <string name="navigation_drawer_close">Close</string>
+</resources>

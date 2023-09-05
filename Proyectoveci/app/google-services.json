@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1005132172581",
+    "project_id": "historia-de-usuario1",
+    "storage_bucket": "historia-de-usuario1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1005132172581:android:5077cc2e94d613b3011ecc",
+        "android_client_info": {
+          "package_name": "com.example.proyectoveci"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1005132172581-lkm2suj2elqj4i3m5tbrei61bbnmnn71.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBvNW-0UJtH0vKuE3F8QsySVu4AxYbhmUE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1005132172581-lkm2suj2elqj4i3m5tbrei61bbnmnn71.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

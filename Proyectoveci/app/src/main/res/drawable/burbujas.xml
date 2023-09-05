@@ -1,0 +1,9 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+    <solid android:color="#FFFFFF" /> <!-- Color de fondo de la burbuja -->
+    <corners android:radius="20dp" /> <!-- Radio de las esquinas -->
+    <gradient
+        android:startColor="#FF00"
+        android:endColor="#FF9600"
+        android:angle="135" />
+</shape>

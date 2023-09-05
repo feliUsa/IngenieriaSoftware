@@ -10,7 +10,7 @@
 <body>
 
     <div class="container-form sign-in">
-        <form class="formulario">
+        <form class="formulario" th:action="@{/login}" method="post">
             <h2 class="create-account">Iniciar sesion</h2>
             <div class="iconos">
                 <div class="border-icono">
@@ -24,9 +24,18 @@
             <option value="opcion3">Cliete</option>
         </select>
             <p class="account">¿No tienes cuenta?</p>
-            <input type="email" placeholder="Correo">
-            <input type="password" placeholder="Contraseña">
-            <input type="button" value="Iniciar sesion">
+            <label class="form-control" for="email">Correo</label>
+            <input id="email" type="email" class="form-control" th:field="{email}" required autofocus="autofocus">
+            <label class="form-control" for="password">Contraseña</label>
+            <input id="password" type="password" class="form-control" th:field="{password}" required autofocus="autofocus">
+            <button type="submit" class="button">Iniciar Sesion</button>
+            <div class="row">
+                <div th:if=${param.error}>
+                    <div class="alert alert-danger">
+                        Usuario o contraseña invalidos
+                    </div>
+                </div>
+            </div>
         </form> 
         <div class="welcomeback">
             <div class="message">
@@ -46,24 +55,35 @@
                 <button class="sign-up-btn">Iniciar Sesion</button>
             </div>
         </div> 
-        <form class="formulario">
-            <h2 class="create-account">Crear una cuenta</h2>
-            <div class="iconos">
-                <div class="border-icono">
-                    <i class='bx bxl-gmail'></i>
-                </div>
-            </div>
-            <select id="miSelect" name="miSelect">
-                <option value="opcion1">Seleccione tipo de usuario</option>
-                <option value="opcion2">Vendedor</option>
-                <option value="opcion3">Cliete</option>
-            </select>
-            <p class="account">Crear una cuenta</p>
-            <input type="text" placeholder="Nombre">
-            <input type="email" placeholder="Correo">
-            <input type="password" placeholder="Contraseña">
-            <input type="button" value="Registrarse">            
-        </form>   
+        <div class="row">
+            <div th:if=${param.exito}>
+                <form class="formulario" th:action="@{/registro}" method="post" th:object="${usuario}">
+                    <h2 class="create-account">Crear una cuenta</h2>
+                    <div class="iconos">
+                        <div class="border-icono">
+                            <i class='bx bxl-gmail'></i>
+                        </div>
+                    </div>
+                    <select id="miSelect" name="miSelect">
+                        <option value="opcion1">Seleccione tipo de usuario</option>
+                        <option value="opcion2">Vendedor</option>
+                        <option value="opcion3">Cliente</option>
+                    </select>
+                    <p class="account">Crear una cuenta</p>
+                    <label class="form-control" for="username">Nombre</label>
+                    <input id="username" type="text" class="form-control" th:field="{nombre}" required autofocus="autofocus">
+                    <label class="form-control" for="email">Correo</label>
+                    <input id="email" type="email" class="form-control" th:field="{email}" required autofocus="autofocus">
+                    <label class="form-control" for="password">Contraseña</label>
+                    <input id="password" type="password" class="form-control" th:field="{password}" required autofocus="autofocus">
+                    <button type="submit" class="button">Registrarse</button>
+                    <br>      
+                    <div class="alert alert-info">
+                    Ha sido registrado exitosamente
+                    </div>      
+                </form>
+            </div> 
+        </div>  
     </div>
 
 

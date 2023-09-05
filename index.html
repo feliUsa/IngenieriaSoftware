@@ -1,28 +1,320 @@
 <!DOCTYPE html>
-
 <html lang="es">
 
-    <head>
-        <meta charset="uft-8">
-        <meta name="viewport" content="width=device-width">
-        <title>Pagina Web Historia de Usuario</title>
-        <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="reset.css">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAFÉ MARÍA</title>
+    <link rel="shortcut icon" href="./images/faviconP.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/estilos.css">
 
-    <body>
-        <header>
+    <meta name="theme-color" content="#2091F9">
+</head>
 
-        </header>
+<body>
 
-        <main>
+    <header class="hero">
+        <nav class="nav container">
+            <div class="nav__logo">
+                <h2 class="nav__title">Cafetería Local</h2>
+            </div>
 
-        </main>
+            <ul class="nav__link nav__link--menu">
+                <li class="nav__items">
+                    <a href="#" class="nav__links">Inicio</a>
+                </li>
+                <li class="nav__items">
+                    <a href="#" class="nav__links">Acerca de</a>
+                </li>
+                <li class="nav__items">
+                    <a href="#" class="nav__links">Contacto</a>
+                </li>
+                <li class="nav__items">
+                    <a href="#" class="nav__links">Blog</a>
+                </li>
 
-        <footer>
+                <img src="./images/close.svg" class="nav__close">
+            </ul>
 
-        </footer>
-        
-    </body>
+            <div class="nav__menu">
+                <img src="./images/menu.svg" class="nav__img">
+            </div>
+        </nav>
+
+        <section class="hero__container container">
+            <h1 class="hero__title">Café María: Menú y Ofertas Especiales</h1>
+            <p class="hero__paragraph">Café María: Tu destino para café de calidad, repostería fresca y ofertas especiales en un ambiente acogedor. ¡Únete a nosotros y apoya a una empresa local!</p>
+            <!-- <a href="#" class="cta">Comienza ahora</a> -->
+        </section>
+    </header>
+
+    <main>
+        <section class="container about">
+            <h2 class="subtitle">¿Quiénes Somos?</h2>
+            <p class="about__paragraph">Somos Café María, una pequeña cafetería en el corazón de tu vecindario. Nuestra pasión es servir café de alta calidad y deliciosas delicias caseras. Aquí tienes una visión general:</p>
+
+            <div class="about__main">
+                <article class="about__icons">
+                    <img src="./images/coffee.svg" class="about__icon">
+                    <h3 class="about__title">Pasión por el Café</h3>
+                    <p class="about__paragrah">Amamos el café y estamos comprometidos con ofrecer las mejores tazas para alegrar tu día.</p>
+                </article>
+
+                <article class="about__icons">
+                    <img src="./images/leaf.svg" class="about__icon">
+                    <h3 class="about__title">Sabores Únicos</h3>
+                    <p class="about__paragrah">Explora nuestro menú de bebidas especiales, cada una creada con un toque único.</p>
+                </article>
+
+                <article class="about__icons">
+                    <img src="./images/bowl-hot.svg" class="about__icon">
+                    <h3 class="about__title">Repostería Casera</h3>
+                    <p class="about__paragrah">Nuestros productos de panadería son horneados frescos diariamente, desde pasteles hasta croissants.</p>
+                </article>
+
+                <article class="about__icons">
+                    <img src="./images/universal-access.svg" class="about__icon">
+                    <h3 class="about__title">Comunidad Local</h3>
+                    <p class="about__paragrah">Nos enorgullece ser parte de tu vecindario y apoyar a la comunidad.</p>
+                </article>
+
+                <article class="about__icons">
+                    <img src="./images/hand.svg" class="about__icon">
+                    <h3 class="about__title">Servicio Amable</h3>
+                    <p class="about__paragrah">Nuestro equipo te recibirá con una sonrisa y te brindará un servicio amable y atento.</p>
+                </article>
+
+                <article class="about__icons">
+                    <img src="./images/face.svg" class="about__icon">
+                    <h3 class="about__title">Ambiente Cálido</h3>
+                    <p class="about__paragrah">Ven y disfruta de nuestro acogedor espacio, perfecto para relajarte o trabajar.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- <section class="knowledge">
+            <div class="knowledge__container container">
+                <div class="knowledege__texts">
+                    <h2 class="subtitle">Curso completo de CSS3. ¡Domina CSS de una vez por todas!</h2>
+                    <p class="knowledge__paragraph">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi,
+                        aliquam nemo in facere suscipit at delectus unde labore ad officia iste accusantium eaque
+                        aperiam laborum est voluptate totam? Modi, obcaecati?</p>
+                    <a href="#" class="cta">Entra al curso</a>
+                </div>
+
+                <figure class="knowledge__picture">
+                    <img src="./images/macbook.png" class="knowledge__img">
+                </figure>
+            </div>
+        </section> -->
+
+        <section class="price container">
+            <h2 class="subtitle">Menú</h2>
+
+            <!-- <div class="price__table">
+                <div class="price__element">
+                    <p class="price__name">Flexbox</p>
+                    <h3 class="price__price">Free</h3>
+
+                    <div class="price__items">
+                        <p class="price__features">Flexbox</p>
+                        <p class="price__features">Layouts</p>
+                        <p class="price__features">Responsive</p>
+                    </div>
+
+                    <a href="#" class="price__cta">Empieza ahora</a>
+                </div>
+
+
+                <div class="price__element price__element--best">
+                    <p class="price__name">Grid</p>
+                    <h3 class="price__price">$30/mes</h3>
+
+                    <div class="price__items">
+                        <p class="price__features">Grid</p>
+                        <p class="price__features">Implicit Grid</p>
+                        <p class="price__features">Responsive</p>
+                    </div>
+
+                    <a href="#" class="price__cta">Empieza ahora</a>
+                </div>
+
+
+                <div class="price__element">
+                    <p class="price__name">Animaciones</p>
+                    <h3 class="price__price">$40/mes</h3>
+
+                    <div class="price__items">
+                        <p class="price__features">Animation</p>
+                        <p class="price__features">Transition</p>
+                        <p class="price__features">Render Website</p>
+                    </div>
+
+                    <a href="#" class="price__cta">Empieza ahora</a>
+                </div>
+
+
+            </div> -->
+        </section>
+
+        <section class="menu">
+            <div class="menu__container container">
+                <img src="./images/leftarrow.svg" class="menu__arrow" id="before">
+
+                <section class="menu__body menu__body--show" data-id="1">
+                    <div class="menu__texts">
+                        <h2 class="subtitle">Té Chai Especiado, <span class="menu__course">Especial de la Casa.</span></h2>
+                        <p class="menu__review">Té negro infusionado con especias como canela, cardamomo y jengibre, endulzado con miel y servido con leche.</p>
+                    </div>
+
+                    <figure class="menu__picture">
+                        <img src="./images/chaiP.png" class="menu__img">
+                    </figure>
+                </section>
+
+                <section class="menu__body" data-id="2">
+                    <div class="menu__texts">
+                        <h2 class="subtitle">Latte Caramelo</h2>
+                        <p class="menu__review">Una mezcla suave de espresso, leche al vapor y un toque de caramelo. Un abrazo reconfortante en una taza.</p>
+                    </div>
+
+                    <figure class="menu__picture">
+                        <img src="./images/carameloP.png" class="menu__img">
+                    </figure>
+                </section>
+
+                <section class="menu__body" data-id="3">
+                    <div class="menu__texts">
+                        <h2 class="subtitle">Mocha Especial</h2>
+                        <p class="menu__review">Nuestro mocha especial combina espresso, chocolate y leche al vapor para una indulgencia irresistible.</p>
+                    </div>
+
+                    <figure class="menu__picture">
+                        <img src="./images/especialP.png" class="menu__img">
+                    </figure>
+                </section>
+
+                <section class="menu__body" data-id="4">
+                    <div class="menu__texts">
+                        <h2 class="subtitle">Café del Día</h2>
+                        <p class="menu__review">Una selección de café del día, siempre fresco y preparado con esmero. Pregunta por nuestras variedades.</p>
+                    </div>
+
+                    <figure class="menu__picture">
+                        <img src="./images/diaP.png" class="menu__img">
+                    </figure>
+                </section>
+
+                <section class="menu__body" data-id="5">
+                    <div class="menu__texts">
+                        <h2 class="subtitle">Smoothie de Frutas Frescas</h2>
+                        <p class="menu__review">Una mezcla refrescante de frutas frescas de temporada y yogur. La opción perfecta para un impulso saludable.</p>
+                    </div>
+
+                    <figure class="menu__picture">
+                        <img src="./images/smothieP.png" class="menu__img">
+                    </figure>
+                </section>
+
+
+                <img src="./images/rightarrow.svg" class="menu__arrow" id="next">
+            </div>
+        </section>
+
+        <section class="questions container">
+            <h2 class="subtitle">Preguntas frecuentes</h2>
+            <p class="questions__paragraph">¡Bienvenido a nuestra sección de Preguntas Frecuentes! Aquí encontrarás respuestas a las consultas más comunes sobre Café María y nuestros servicios. Si tienes alguna pregunta adicional, no dudes en contactarnos. Estamos aquí para ayudarte a tener la mejor experiencia en nuestra cafetería.</p>
+
+            <section class="questions__container">
+                <article class="questions__padding">
+                    <div class="questions__answer">
+                        <h3 class="questions__title">¿Cuáles son sus horas de operación?
+                            <span class="questions__arrow">
+                                <img src="./images/arrow.svg" class="questions__img">
+                            </span>
+                        </h3>
+
+                        <p class="questions__show">Estamos abiertos de lunes a viernes de 7:00 a.m. a 6:00 p.m. y los sábados de 8:00 a.m. a 4:00 p.m. ¡Esperamos verte pronto!</p>
+                    </div>
+                </article>
+
+                <article class="questions__padding">
+                    <div class="questions__answer">
+                        <h3 class="questions__title">¿Ofrecen opciones vegetarianas o veganas en su menú?
+                            <span class="questions__arrow">
+                                <img src="./images/arrow.svg" class="questions__img">
+                            </span>
+                        </h3>
+
+                        <p class="questions__show">Sí, tenemos opciones vegetarianas y veganas en nuestro menú, incluyendo ensaladas frescas y bebidas de café con alternativas de leche no láctea.</p>
+                    </div>
+                </article>
+
+                <article class="questions__padding">
+                    <div class="questions__answer">
+                        <h3 class="questions__title">¿Puedo hacer pedidos para llevar o a través de una aplicación de entrega?
+                            <span class="questions__arrow">
+                                <img src="./images/arrow.svg" class="questions__img">
+                            </span>
+                        </h3>
+
+                        <p class="questions__show">Claro, ofrecemos opciones para llevar. También puedes realizar pedidos a través de aplicaciones de entrega populares para disfrutar de nuestros productos desde la comodidad de tu hogar.</p>
+                    </div>
+                </article>
+            </section>
+
+            <section class="questions__offer">
+                <h2 class="subtitle">Contáctanos</h2>
+                <p class="questions__copy">¿No encontraste la respuesta que buscabas? ¡Estamos aquí para ayudarte! No dudes en ponerte en contacto con nosotros para cualquier pregunta adicional o solicitud especial.</p>
+                <!-- <a href="#" class="cta">Aprende ahora</a> -->
+            </section>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <section class="footer__container container">
+            <nav class="nav nav--footer">
+                <h2 class="footer__title">Café María</h2>
+
+                <!-- <ul class="nav__link nav__link--footer">
+                    <li class="nav__items">
+                        <a href="#" class="nav__links">Inicio</a>
+                    </li>
+                    <li class="nav__items">
+                        <a href="#" class="nav__links">Acerca de</a>
+                    </li>
+                    <li class="nav__items">
+                        <a href="#" class="nav__links">Contacto</a>
+                    </li>
+                    <li class="nav__items">
+                        <a href="#" class="nav__links">Blog</a>
+                    </li>
+                </ul> -->
+            </nav>
+
+            <form class="footer__form" action="https://formspree.io/f/mknkkrkj" method="POST">
+                <h2 class="footer__newsletter">Más Información</h2>
+                <div class="footer__inputs">
+                    <input type="email" placeholder="Email:" class="footer__input" name="_replyto">
+                    <input type="submit" value="Registrate" class="footer__submit">
+                </div>
+            </form>
+        </section>
+
+        <section class="footer__copy container">
+            <div class="footer__social">
+                <!-- <a href="#" class="footer__icons"><img src="./images/whatsapp.svg" class="footer__img"></a> -->
+            </div>
+
+            <h3 class="footer__copyright">Derechos reservados &copy; Juan Esteban Tello</h3>
+        </section>
+    </footer>
+
+    <script src="./js/slider.js"></script>
+    <script src="./js/questions.js"></script>
+    <script src="./js/menu.js"></script>
+</body>
 
 </html>

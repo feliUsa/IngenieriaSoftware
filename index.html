@@ -7,7 +7,6 @@
         <meta name="viewport" content="width=device-width">
         <title>Billing</title>
         <link rel="stylesheet" href="style.css">
-        <!--<link rel="stylesheet" href="reset.css">-->
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     </head>
 
@@ -79,14 +78,14 @@
 
             <form>
                 <div class="dataUser">   
-                    <input type="text" required>
+                    <input type="text" name="idUser" required>
                     <span class="highlight"></span>
                     <span class="bar"></span>
                     <label>ID</label>
                 </div>
                   
                 <div class="dataUser">    
-                    <input type="text" required>
+                    <input type="text" name="nameUser" required>
                     <span class="highlight"></span>
                     <span class="bar"></span>
                     <label>Name</label>
@@ -94,106 +93,54 @@
                 
             </form>
 
-            <form>
+            <form method="POST">
 
                 <div class="client">
-                    <input type="text" required>
+                    <input type="text" name="id" required>
                     <span class="highlight"></span>
                     <span class="bar"></span>
                     <label>ID</label>
                 </div>
 
                 <div class="client">      
-                    <input type="text" required>
+                    <input type="text" name="name" required>
                     <span class="highlight"></span>
                     <span class="bar"></span>
                     <label>Name</label>
                 </div>
 
                   <div class="client">
-                    <input type="text" required>
+                    <input type="text" name="email" required>
                     <span class="highlight"></span>
                     <span class="bar"></span>
                     <label>Email</label>
                 </div>
 
                 <div class="client">  
-                    <input type="text" required>
+                    <input type="text" name="address" required>
                     <span class="highlight"></span>
                     <span class="bar"></span>
                     <label>Address</label>
                 </div>
 
                 <div class="client">    
-                    <input type="text" required>
+                    <input type="text" name="phone" required>
                     <span class="highlight"></span>
                     <span class="bar"></span>
                     <label>Phone Number</label> 
                 </div>
 
+                <div class="client">
+                    <input type="submit" name="enviar" value="Guardar">
+                </div>
+
             </form>
 
         </div>
-        
 
-        <!--
-        <main>
-
-            <form>
-                <div>
-                    <label for="cedula" id="ced">Cedula</label>
-                    <input type="text" id="cedula" required class="input-vendedor">
-
-                    <label for="nombre">Nombre</label>
-                    <input type="text" id="nombre" required class="input-vendedor">
-
-                </div>
-            </form>
-
-            <form>
-                <div>
-                    <label for="cedula">Cedula</label>
-                    <input type="tel" id="cedula" class="input-usuario" required>
-
-                    <div class="nombre-apellido">
-
-                        <div class="contenedor-nombre">
-                            <label for="nombre">Nombre</label>
-                            <input type="text" id="nombre" class="input-usuario" required>
-                        </div>
-
-                        <div class="contenedor-nombre2">
-                            <input type="text" id="segundoNombre" class="input-usuario">
-                        </div>
-
-                        <div class="contenedor-apellido">
-                            <label for="apellido">Apellido</label>
-                            <input type="text" id="apellido" class="input-usuario" required>
-                        </div>
-
-                        <div class="contenedor-apellido2">
-                            <input type="text" id="segundoApellido" class="input-usuario">
-                        </div>
-                            
-                    </div>
-                    
-        
-                    <label for="telefono">Telefono</label>
-                    <input type="tel" id="telefono" class="input-usuario" >
-        
-                    <label for="correo">Correo</label>
-                    <input type="email" id="correo" class="input-usuario" required>
-        
-                    <label for="mensaje">Dirección</label>
-                    <textarea id="mensaje" cols="68" rows="5" class="input-usuario"></textarea>
-                </div>
-            </form>
-        </main>
-        -->
-
-        
-
-        </footer>
+        <?php 
+        include("guardar_datos.php");
+        ?>
 
     </body>
 
@@ -205,5 +152,7 @@
         sidebar.classList.toggle('active');
     };
 </script>
+
+
 
 </html>

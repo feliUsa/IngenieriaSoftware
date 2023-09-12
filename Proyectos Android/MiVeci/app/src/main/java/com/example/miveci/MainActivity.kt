@@ -33,7 +33,6 @@ class MainActivity : AppCompatActivity() {
 
     //funcion para llamar a la actividad de tiendas
     fun callTienditasActivity(view: View) {
-        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
         tiendasUuU()
     }
     fun tiendasUuU(){
@@ -43,7 +42,6 @@ class MainActivity : AppCompatActivity() {
 
     //funcion para llamar a la actividad de mapa
     fun callMapActivity(view: View) {
-        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
         mapUuU()
     }
     fun mapUuU(){

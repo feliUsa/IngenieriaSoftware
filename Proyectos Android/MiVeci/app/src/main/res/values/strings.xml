@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">MiVeci</string>
+    <string-array name="ciudades">
+        <item>Ciudad</item>
+        <item>Bogotá</item>
+        <item>Medellín</item>
+        <item>Cali</item>
+    </string-array>
+
+    <string-array name="localidades">
+        <item>Localidad</item>
+        <item>Chapinero</item>
+        <item>Usaquén</item>
+        <item>Suba</item>
+    </string-array>
 </resources>

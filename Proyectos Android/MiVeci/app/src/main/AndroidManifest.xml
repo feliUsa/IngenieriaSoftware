@@ -16,7 +16,7 @@
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyA9C6dGYeIOrfyJZNyS6voxId3Ten98dIQ" />
+            android:value="API KEY" />
 
         <activity
             android:name=".configActivity"

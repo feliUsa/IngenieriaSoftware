@@ -1,22 +1,23 @@
 package com.example.miveci
 import android.Manifest
 import android.content.pm.PackageManager
-import android.location.Location
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.core.app.ActivityCompat
-import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.MapView
 import com.google.android.gms.maps.OnMapReadyCallback
-import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
+import java.io.BufferedReader
+import java.io.IOException
+import java.io.InputStreamReader
 
 class mapActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private lateinit var mapView: MapView
+    private lateinit var mMap: GoogleMap
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,36 +49,49 @@ class mapActivity : AppCompatActivity(), OnMapReadyCallback {
     }
 
     override fun onMapReady(googleMap: GoogleMap) {
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.ACCESS_FINE_LOCATION), 1)
+        mMap = googleMap
+        if (ActivityCompat.checkSelfPermission(
+                this,
+                Manifest.permission.ACCESS_FINE_LOCATION
+            ) != PackageManager.PERMISSION_GRANTED
+        ) {
+            ActivityCompat.requestPermissions(
+                this,
+                arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
+                1
+            )
         } else {
             googleMap.isMyLocationEnabled = true
         }
-
-        val tiendita1 = LatLng(4.7708774,-74.1317791)
-        val marker = googleMap.addMarker(
-            MarkerOptions()
-                .position(tiendita1)
-                .title("Restaurante Doña Sandra")
-        )
-
-        ajusteVisibilidadMarcador(googleMap, marker)
+        cargarMarcadoresDesdeArchivo()
     }
 
-    fun ajusteVisibilidadMarcador(googleMap: GoogleMap, marker: Marker){
-        googleMap.setOnCameraIdleListener {
-            val cameraPosition = googleMap.cameraPosition
-            val distance = FloatArray(1)
-            Location.distanceBetween(
-                cameraPosition.target.latitude, cameraPosition.target.longitude,
-                marker.position.latitude, marker.position.longitude, distance
-            )
-            if (distance[0] < 300) {
-                marker.isVisible = true
-            } else {
-                marker.isVisible = false
+    private fun cargarMarcadoresDesdeArchivo() {
+
+        try {
+            val inputStream = resources.openRawResource(R.raw.tiendas)
+            val reader = BufferedReader(InputStreamReader(inputStream))
+            var line: String?
+
+            while (reader.readLine().also { line = it } != null) {
+                val parts = line?.split(",")
+                if (parts?.size == 3) {
+                    val nombre = parts[0]
+                    val lat = parts[1].toDouble()
+                    val lng = parts[2].toDouble()
+                    val tiendaLatLng = LatLng(lat, lng)
+
+                    // Agregar marcador al mapa
+                    mMap.addMarker(
+                        MarkerOptions()
+                            .position(tiendaLatLng)
+                            .title(nombre)
+                    )
+                }
             }
+            reader.close()
+        } catch (e: IOException) {
+            e.printStackTrace()
         }
     }
-
 }

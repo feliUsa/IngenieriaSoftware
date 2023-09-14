@@ -7,10 +7,124 @@
         <item>Cali</item>
     </string-array>
 
-    <string-array name="localidades">
+    <string-array name="localidad">
         <item>Localidad</item>
+    </string-array>
+    <string-array name="localidades_bogota">
         <item>Chapinero</item>
         <item>Usaquén</item>
+        <item>Santa Fe</item>
+        <item>San Cristóbal</item>
+        <item>Usme</item>
+        <item>Tunjuelito</item>
+        <item>Bosa</item>
+        <item>Kennedy</item>
+        <item>Fontibón</item>
+        <item>Engativá</item>
         <item>Suba</item>
+        <item>Barrios Unidos</item>
+        <item>Teusaquillo</item>
+        <item>Los Mártires</item>
+        <item>Antonio Nariño</item>
+        <item>Puente Aranda</item>
+        <item>La Candelaria</item>
+        <item>Rafael Uribe Uribe</item>
+        <item>Ciudad Bolívar</item>
     </string-array>
+
+    <string-array name="localidades_medellin">
+        <item>La Candelaria</item>
+        <item>Buenos Aires</item>
+        <item>La América</item>
+        <item>San Javier</item>
+        <item>Popular</item>
+        <item>Santa Cruz</item>
+        <item>El Poblado</item>
+        <item>Guayabal</item>
+        <item>Belén</item>
+        <item>Laureles-Estadio</item>
+        <item>Envigado</item>
+        <item>Sabaneta</item>
+        <item>Itagüí</item>
+    </string-array>
+
+    <string-array name="localidades_cali">
+        <item>Distrito de Aguablanca</item>
+        <item>Distrito de San Antonio</item>
+        <item>Distrito de San Fernando</item>
+        <item>Distrito de La Merced</item>
+        <item>Distrito de El Peñón</item>
+        <item>Distrito de Versalles</item>
+        <item>Distrito de Granada</item>
+        <item>Distrito de Santa Elena</item>
+        <item>Distrito de La Rivera</item>
+        <item>Distrito de Sucre</item>
+        <item>Distrito de La Luna</item>
+        <item>Distrito de La Flora</item>
+        <item>Distrito de El Vallado</item>
+        <item>Distrito de La Campiña</item>
+        <item>Distrito de Ciudad Jardín</item>
+        <item>Distrito de Pance</item>
+        <item>Distrito de Meléndez</item>
+        <item>Distrito de Llano Verde</item>
+        <item>Distrito de Navarro</item>
+        <item>Distrito de Potrero Grande</item>
+        <item>Distrito de Terrón Colorado</item>
+        <item>Distrito de Los Chorros</item>
+        <item>Distrito de El Ingenio</item>
+        <item>Distrito de Mojica</item>
+        <item>Distrito de La Buitrera</item>
+        <item>Distrito de La Selva</item>
+        <item>Distrito de La Leonera</item>
+        <item>Distrito de La Holanda</item>
+        <item>Distrito de La Castilla</item>
+        <item>Distrito de La Elvira</item>
+        <item>Distrito de La Reforma</item>
+        <item>Distrito de La Pradera</item>
+        <item>Distrito de La Isla</item>
+        <item>Distrito de La Nueva Base</item>
+        <item>Distrito de La Playa</item>
+        <item>Distrito de La Floresta</item>
+        <item>Distrito de La Alameda</item>
+        <item>Distrito de La Gran Colombia</item>
+        <item>Distrito de La Libertad</item>
+        <item>Distrito de La Flora Norte</item>
+        <item>Distrito de La Flora Sur</item>
+        <item>Distrito de La Campiña Norte</item>
+        <item>Distrito de La Campiña Sur</item>
+        <item>Distrito de Ciudad Jardín Norte</item>
+        <item>Distrito de Ciudad Jardín Sur</item>
+        <item>Distrito de Pance Norte</item>
+        <item>Distrito de Pance Sur</item>
+        <item>Distrito de Meléndez Norte</item>
+        <item>Distrito de Meléndez Sur</item>
+        <item>Distrito de Navarro Norte</item>
+        <item>Distrito de Navarro Sur</item>
+        <item>Distrito de Terrón Colorado Norte</item>
+        <item>Distrito de Terrón Colorado Sur</item>
+        <item>Distrito de Los Chorros Norte</item>
+        <item>Distrito de Los Chorros Sur</item>
+        <item>Distrito de El Ingenio Norte</item>
+        <item>Distrito de El Ingenio Sur</item>
+        <item>Distrito de Mojica Norte</item>
+        <item>Distrito de Mojica Sur</item>
+        <item>Distrito de La Buitrera Norte</item>
+        <item>Distrito de La Buitrera Sur</item>
+        <item>Distrito de La Selva Norte</item>
+        <item>Distrito de La Selva Sur</item>
+        <item>Distrito de La Leonera Norte</item>
+        <item>Distrito de La Leonera Sur</item>
+        <item>Distrito de La Holanda Norte</item>
+        <item>Distrito de La Holanda Sur</item>
+        <item>Distrito de La Castilla Norte</item>
+        <item>Distrito de La Castilla Sur</item>
+        <item>Distrito de La Elvira Norte</item>
+        <item>Distrito de La Elvira Sur</item>
+        <item>Distrito de La Reforma Norte</item>
+        <item>Distrito de La Reforma Sur</item>
+        <item>Distrito de La Pradera Norte</item>
+        <item>Distrito de La Pradera Sur</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

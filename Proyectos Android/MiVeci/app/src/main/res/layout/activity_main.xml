@@ -17,6 +17,16 @@
         app:layout_constraintTop_toTopOf="parent"
         android:animateLayoutChanges="true"/>
     <ImageView
+        android:id="@+id/burbuja5"
+        android:layout_marginStart="-200dp"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="600dp"
+        android:animateLayoutChanges="true"
+        android:background="@drawable/circulos"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <ImageView
         android:id="@+id/burbuja2"
         android:layout_width="200dp"
         android:layout_height="200dp"
@@ -77,7 +87,6 @@
 
 
     </RelativeLayout>
-
     <!-- Layout para Escoger opciones -->
     <LinearLayout
         android:layout_width="wrap_content"

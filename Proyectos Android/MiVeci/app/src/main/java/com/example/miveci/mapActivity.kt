@@ -14,10 +14,12 @@ import java.io.BufferedReader
 import java.io.IOException
 import java.io.InputStreamReader
 
+
 class mapActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private lateinit var mapView: MapView
     private lateinit var mMap: GoogleMap
+    private val markers = mutableListOf<Marker>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,6 +50,7 @@ class mapActivity : AppCompatActivity(), OnMapReadyCallback {
         mapView.onLowMemory()
     }
 
+    //permisos para iniciar el mapa
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
         if (ActivityCompat.checkSelfPermission(
@@ -64,8 +67,22 @@ class mapActivity : AppCompatActivity(), OnMapReadyCallback {
             googleMap.isMyLocationEnabled = true
         }
         cargarMarcadoresDesdeArchivo()
+
+        mMap.setOnCameraIdleListener {
+            if (mMap.cameraPosition.zoom > 12) { // Change this threshold as needed
+                for (marker in this.markers) {
+                    marker.isVisible = true
+                }
+            } else {
+                for (marker in this.markers) {
+                    marker.isVisible = false
+                }
+            }
+        }
     }
 
+
+    //Se agregan marcadores desde un archivo txt
     private fun cargarMarcadoresDesdeArchivo() {
 
         try {
@@ -81,12 +98,15 @@ class mapActivity : AppCompatActivity(), OnMapReadyCallback {
                     val lng = parts[2].toDouble()
                     val tiendaLatLng = LatLng(lat, lng)
 
-                    // Agregar marcador al mapa
-                    mMap.addMarker(
+                    // Agregar marcador al mapa y a la lista de markers
+                    val marker = mMap.addMarker(
                         MarkerOptions()
                             .position(tiendaLatLng)
                             .title(nombre)
                     )
+                    if (marker != null) {
+                        markers.add(marker)
+                    }
                 }
             }
             reader.close()

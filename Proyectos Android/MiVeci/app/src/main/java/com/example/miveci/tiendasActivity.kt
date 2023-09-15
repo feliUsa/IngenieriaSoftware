@@ -3,7 +3,6 @@ package com.example.miveci
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
-@Suppress("UNREACHABLE_CODE")
 class tiendasActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {

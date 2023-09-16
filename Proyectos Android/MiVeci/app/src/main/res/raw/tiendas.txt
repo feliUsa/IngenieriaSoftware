@@ -1,2 +1,2 @@
-Restaurante Doña Sandra,4.7708774,-74.1317791
-Tienda Del Veci,4.773296,-74.1360361
+Tienda Del Veci,4.773296,-74.1360361,Cota,Parcelas
+Restaurante Doña Sandra,4.7708774,-74.1317791,Cota,Parcelas

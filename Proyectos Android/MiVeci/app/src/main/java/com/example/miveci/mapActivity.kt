@@ -84,7 +84,6 @@ class mapActivity : AppCompatActivity(), OnMapReadyCallback {
 
     //Se agregan marcadores desde un archivo txt
     private fun cargarMarcadoresDesdeArchivo() {
-
         try {
             val inputStream = resources.openRawResource(R.raw.tiendas)
             val reader = BufferedReader(InputStreamReader(inputStream))
@@ -92,10 +91,14 @@ class mapActivity : AppCompatActivity(), OnMapReadyCallback {
 
             while (reader.readLine().also { line = it } != null) {
                 val parts = line?.split(",")
-                if (parts?.size == 3) {
+                if (parts?.size == 5) { // Verifica que haya 5 partes
                     val nombre = parts[0]
                     val lat = parts[1].toDouble()
                     val lng = parts[2].toDouble()
+
+                    // Puedes agregar la ciudad y la localidad al título pero ocultarlas
+                    val ciudad = parts[3]
+                    val localidad = parts[4]
                     val tiendaLatLng = LatLng(lat, lng)
 
                     // Agregar marcador al mapa y a la lista de markers
@@ -103,6 +106,7 @@ class mapActivity : AppCompatActivity(), OnMapReadyCallback {
                         MarkerOptions()
                             .position(tiendaLatLng)
                             .title(nombre)
+                            .snippet("Ciudad: $ciudad, Localidad: $localidad") // Mostrar en el snippet si es necesario
                     )
                     if (marker != null) {
                         markers.add(marker)
@@ -114,4 +118,5 @@ class mapActivity : AppCompatActivity(), OnMapReadyCallback {
             e.printStackTrace()
         }
     }
+
 }

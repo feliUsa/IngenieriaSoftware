@@ -379,6 +379,13 @@ body {
     width: 30px;
 }
 
+/* Google Maps */
+
+.google_maps {
+    /* background-color: red;
+    font-size: 16px; */
+}
+
 /* Media queries */
 
 @media (max-width:800px){

@@ -7,10 +7,6 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    /* background-image: linear-gradient(180deg, #0000008c 0%, #0000008c 100%), url('../images/fondoPrueba.png')!important;
-    background-repeat: no-repeat!important;
-    background-size: cover!important; 
-    background-attachment: fixed!important; */
 }
 
 .container {
@@ -130,7 +126,8 @@ body {
 
 .about {
     text-align: center;
-    /* background-color: #e5e5f7; */
+    background-color: #ADABAA;
+    margin-bottom: 30px;
 }
 
 /* .space {
@@ -180,8 +177,7 @@ body {
 /* Menu */
 
 .menu{
-    background-color: #e5e5f7;
-    /* padding: var(--padding-container) 0; */
+    background-color: #ADABAA;
     text-align: center;
     margin-left: 30px;
     margin-right: 30px;
@@ -243,7 +239,7 @@ body {
 
 .questions{
     text-align: center;
-    /* background-color: #e5e5f7; */
+    background-color: #ADABAA;
     margin-bottom: 45px;
     margin-left: 30px;
     margin-right: 30px;
@@ -321,6 +317,15 @@ body {
     margin-bottom: 30px;
 }
 
+.questions__offer{
+    text-align: center;
+    background-color: #ADABAA;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 380px;
+    margin-right: 380px;
+}
+
 /* Footer */
 
 .footer{
@@ -382,8 +387,12 @@ body {
 /* Google Maps */
 
 .google_maps {
-    /* background-color: red;
-    font-size: 16px; */
+    text-align: center;
+    background-color: #ADABAA;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 380px;
+    margin-right: 380px;
 }
 
 /* Formulario */
@@ -446,6 +455,10 @@ body {
 
   .nav-nav--fotter{
     text-align: center;
+  }
+
+  .form-register{
+    margin-bottom: 120px;
   }
 
 /* Media queries */

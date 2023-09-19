@@ -43,7 +43,7 @@ class tiendasActivity : AppCompatActivity() {
         spinnerLocalidad = findViewById(R.id.spinnerLocalidad)
         spinnerCiudad = findViewById(R.id.spinnerCiudad)
 
-        // Configurar adaptadores para los Spinners (debes proporcionar tus propios datos)
+        // Configurar adaptadores para los Spinners
         val localidades = obtenerLocalidades().toMutableList()
         val localidadAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, localidades)
         localidadAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
@@ -72,7 +72,6 @@ class tiendasActivity : AppCompatActivity() {
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {
-                // No hacer nada
             }
         }
 

@@ -75,12 +75,12 @@ class mapActivity : AppCompatActivity(), OnMapReadyCallback {
         // Verificar si se debe hacer zoom
         val shouldZoom = intent.getBooleanExtra("zoom", false)
         if (shouldZoom) {
-            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(tiendaLatLng, 15f)) // Ajusta el nivel de zoom según sea necesario
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(tiendaLatLng, 17f))
         }
         cargarMarcadoresDesdeArchivo()
 
         mMap.setOnCameraIdleListener {
-            if (mMap.cameraPosition.zoom > 14.5) { // Change this threshold as needed
+            if (mMap.cameraPosition.zoom > 14.5) {
                 for (marker in this.markers) {
                     marker.isVisible = true
                 }

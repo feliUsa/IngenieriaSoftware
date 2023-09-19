@@ -102,7 +102,7 @@ class mapActivity : AppCompatActivity(), OnMapReadyCallback {
 
             while (reader.readLine().also { line = it } != null) {
                 val parts = line?.split(",")
-                if (parts?.size == 7) { // Verifica que haya 7 partes en lugar de 5
+                if (parts?.size == 8) {
                     val nombre = parts[0]
                     val lat = parts[1].toDouble()
                     val lng = parts[2].toDouble()

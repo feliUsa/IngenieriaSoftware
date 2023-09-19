@@ -1,5 +1,6 @@
 package com.example.miveci
 
+import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
@@ -24,6 +25,7 @@ class TiendaAdapter(
         val view = LayoutInflater.from(parent.context).inflate(R.layout.list_item_tienda, parent, false)
         return ViewHolder(view)
     }
+
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val tienda = tiendas[position]

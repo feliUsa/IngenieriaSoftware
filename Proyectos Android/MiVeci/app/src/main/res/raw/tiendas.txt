@@ -1,2 +1,2 @@
-Tienda Del Veci,4.773296,-74.1360361,Cota,Parcelas,Esta es la descripción de la Tienda Del Veci,123456789
-Restaurante Doña Sandra,4.7708774,-74.1317791,Cota,Parcelas,Esta es la descripción del Restaurante Doña Sandra,987654321
+Tienda Del Veci,4.773296,-74.1360361,Cota,Parcelas,Mercado,Esta es la descripción de la Tienda Del Veci,123456789
+Restaurante Doña Sandra,4.7708774,-74.1317791,Cota,Parcelas,Restaurante,Esta es la descripción del Restaurante Doña Sandra,987654321

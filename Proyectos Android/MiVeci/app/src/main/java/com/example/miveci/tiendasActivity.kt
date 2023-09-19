@@ -72,6 +72,7 @@ class tiendasActivity : AppCompatActivity() {
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {
+                // No hacer nada
             }
         }
 
@@ -79,7 +80,7 @@ class tiendasActivity : AppCompatActivity() {
             override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
                 val ciudadSeleccionada = parent.getItemAtPosition(position).toString()
                 if (ciudadSeleccionada == "Todo") {
-                    adapter.actualizarLista(tiendasCompleta) // Mostrar todas las tiendas sin filtrar
+                    adapter.actualizarLista(tiendasCompleta)
                 } else {
                     val tiendasFiltradas = filtrarTiendasPorCiudad(ciudadSeleccionada)
                     adapter.actualizarLista(tiendasFiltradas)
@@ -90,6 +91,35 @@ class tiendasActivity : AppCompatActivity() {
                 // No hacer nada
             }
         }
+
+        val spinnerTipo: Spinner = findViewById(R.id.spinnerTipo)
+
+        // Obtener una lista de todos los tipos de tiendas únicos
+                val tiposDeTienda = obtenerTiposDeTienda().toMutableList()
+                tiposDeTienda.add(0, "Todo") // Agrega una opción para mostrar todas las tiendas
+
+                val tipoAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, tiposDeTienda)
+                tipoAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+                spinnerTipo.adapter = tipoAdapter
+
+        // Agregar listener para el Spinner de tipo de tienda
+                spinnerTipo.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+                    override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
+                        val tipoSeleccionado = parent.getItemAtPosition(position).toString()
+                        if (tipoSeleccionado == "Todo") {
+                            // Mostrar todas las tiendas sin filtrar por tipo
+                            adapter.actualizarLista(tiendasCompleta)
+                        } else {
+                            // Filtrar las tiendas por tipo seleccionado
+                            val tiendasFiltradas = filtrarTiendasPorTipo(tipoSeleccionado)
+                            adapter.actualizarLista(tiendasFiltradas)
+                        }
+                    }
+
+                    override fun onNothingSelected(parent: AdapterView<*>?) {
+                        // No hacer nada
+                    }
+                }
     }
     private fun readTiendasFromFile(fileName: String): List<Tienda> {
         val tiendas = mutableListOf<Tienda>()
@@ -99,16 +129,18 @@ class tiendasActivity : AppCompatActivity() {
             var line: String?
             while (reader.readLine().also { line = it } != null) {
                 val parts = line?.split(",")
-                if (parts != null && parts.size == 7) {
+                if (parts != null && parts.size == 8) { // Ahora hay 8 campos en lugar de 7
                     val nombre = parts[0]
                     val ciudad = parts[3]
                     val localidad = parts[4]
-                    val descripcion = parts[5]
-                    val numeroContacto = parts[6]
+                    val tipo = parts[5] // Nuevo campo para el tipo de tienda
+                    val descripcion = parts[6]
+                    val numeroContacto = parts[7]
                     val latitud = parts[1].toDouble()
                     val longitud = parts[2].toDouble()
-                    tiendas.add(Tienda(nombre, ciudad, localidad, descripcion, numeroContacto, latitud, longitud))
+                    tiendas.add(Tienda(nombre, ciudad, localidad, tipo, descripcion, numeroContacto, latitud, longitud))
                 }
+
             }
             reader.close()
         } catch (e: IOException) {
@@ -117,6 +149,16 @@ class tiendasActivity : AppCompatActivity() {
         return tiendas
     }
 
+
+    // Obtener una lista de todos los tipos de tiendas únicos de las tiendas
+    private fun obtenerTiposDeTienda(): List<String> {
+        return tiendas.map { it.tipo }.distinct()
+    }
+
+    // Función para filtrar tiendas por tipo
+    private fun filtrarTiendasPorTipo(tipo: String): List<Tienda> {
+        return tiendas.filter { it.tipo == tipo }
+    }
 
     // Funciones para filtrar tiendas por localidad y ciudad
     private fun filtrarTiendasPorLocalidad(localidad: String): List<Tienda> {

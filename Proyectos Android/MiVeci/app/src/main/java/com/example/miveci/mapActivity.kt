@@ -101,7 +101,7 @@ class mapActivity : AppCompatActivity(), OnMapReadyCallback {
             var line: String?
 
             while (reader.readLine().also { line = it } != null) {
-                val parts = line?.split(",")
+                val parts = line?.split(";")
                 if (parts?.size == 8) {
                     val nombre = parts[0]
                     val lat = parts[1].toDouble()

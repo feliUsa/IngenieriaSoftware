@@ -4,6 +4,7 @@ import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.core.app.ActivityCompat
+import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.MapView
 import com.google.android.gms.maps.OnMapReadyCallback
@@ -65,6 +66,16 @@ class mapActivity : AppCompatActivity(), OnMapReadyCallback {
             )
         } else {
             googleMap.isMyLocationEnabled = true
+        }
+
+        val lat = intent.getDoubleExtra("lat", 0.0)
+        val lng = intent.getDoubleExtra("lng", 0.0)
+        val tiendaLatLng = LatLng(lat, lng)
+
+        // Verificar si se debe hacer zoom
+        val shouldZoom = intent.getBooleanExtra("zoom", false)
+        if (shouldZoom) {
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(tiendaLatLng, 15f)) // Ajusta el nivel de zoom según sea necesario
         }
         cargarMarcadoresDesdeArchivo()
 

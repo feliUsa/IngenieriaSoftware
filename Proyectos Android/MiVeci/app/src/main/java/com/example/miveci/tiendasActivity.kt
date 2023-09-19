@@ -36,7 +36,7 @@ class tiendasActivity : AppCompatActivity() {
         tiendasCompleta = tiendas.toList() // Copia de seguridad de todas las tiendas
 
         // Configurar el adaptador inicial para mostrar todas las tiendas
-        adapter = TiendaAdapter(tiendas)
+        adapter = TiendaAdapter(tiendas,this)
         recyclerView.adapter = adapter
 
         // Obtener referencias a los Spinners
@@ -59,7 +59,7 @@ class tiendasActivity : AppCompatActivity() {
         tiendas = readTiendasFromFile("tiendas.txt")
 
         // Configurar el adaptador inicial para mostrar todas las tiendas
-        adapter = TiendaAdapter(tiendas)
+        adapter = TiendaAdapter(tiendas,this)
         recyclerView.adapter = adapter
 
         // Agregar listeners para los Spinners

@@ -78,24 +78,26 @@
 
         <Spinner
             android:id="@+id/spinnerLocalidad"
-            android:layout_width="70dp"
-            android:layout_height="30dp"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:layout_marginEnd="32dp"
+            android:padding="10dp"
             android:background="@drawable/fondo_degradado"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <Spinner
             android:id="@+id/spinnerCiudad"
-            android:layout_width="70dp"
-            android:layout_height="30dp"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            android:layout_marginTop="5dp"
             android:background="@drawable/fondo_degradado"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/spinnerLocalidad" />

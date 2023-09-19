@@ -8,12 +8,68 @@
     tools:context=".tiendasActivity"
     android:background="@drawable/fondo_degradado">
 
+    <!--Imagenes burbujas -->
+
+    <ImageView
+        android:id="@+id/burbuja1"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="244dp"
+        android:layout_marginTop="212dp"
+        android:animateLayoutChanges="true"
+        android:background="@drawable/circulos"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/burbuja5"
+        android:layout_marginStart="-200dp"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="600dp"
+        android:animateLayoutChanges="true"
+        android:background="@drawable/circulos"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/burbuja2"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="388dp"
+        android:animateLayoutChanges="true"
+        android:background="@drawable/circulos"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/burbuja3"
+        android:layout_width="261dp"
+        android:layout_height="265dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="16dp"
+        android:animateLayoutChanges="true"
+        android:background="@drawable/circulos"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/burbuja4"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginStart="132dp"
+        android:layout_marginTop="624dp"
+        android:animateLayoutChanges="true"
+        android:background="@drawable/circulos"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <RelativeLayout
         android:id="@+id/relativeLayout2"
         android:layout_width="338dp"
         android:layout_height="50dp"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="30dp"
         android:background="@drawable/fondo_con_esquinas_redondas"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
@@ -28,9 +84,9 @@
             android:layout_alignParentEnd="true"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="32dp"
+            android:background="@drawable/fondo_degradado"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:background="@drawable/fondo_degradado"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <Spinner
             android:id="@+id/spinnerCiudad"
@@ -38,11 +94,11 @@
             android:layout_height="30dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="10dp"
             android:layout_marginStart="32dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/fondo_degradado"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/spinnerLocalidad"
-            android:background="@drawable/fondo_degradado"/>
+            app:layout_constraintTop_toBottomOf="@+id/spinnerLocalidad" />
 
     </RelativeLayout>
 
@@ -50,11 +106,10 @@
         android:layout_width="338dp"
         android:layout_height="650dp"
         android:background="@drawable/fondo_con_esquinas_redondas"
-        android:layout_marginBottom="45dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
->
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout2">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
@@ -66,6 +121,4 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </RelativeLayout>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

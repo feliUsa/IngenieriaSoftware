@@ -69,7 +69,7 @@ class mapActivity : AppCompatActivity(), OnMapReadyCallback {
         cargarMarcadoresDesdeArchivo()
 
         mMap.setOnCameraIdleListener {
-            if (mMap.cameraPosition.zoom > 12) { // Change this threshold as needed
+            if (mMap.cameraPosition.zoom > 14.5) { // Change this threshold as needed
                 for (marker in this.markers) {
                     marker.isVisible = true
                 }
@@ -91,22 +91,20 @@ class mapActivity : AppCompatActivity(), OnMapReadyCallback {
 
             while (reader.readLine().also { line = it } != null) {
                 val parts = line?.split(",")
-                if (parts?.size == 5) { // Verifica que haya 5 partes
+                if (parts?.size == 7) { // Verifica que haya 7 partes en lugar de 5
                     val nombre = parts[0]
                     val lat = parts[1].toDouble()
                     val lng = parts[2].toDouble()
-
-                    // Puedes agregar la ciudad y la localidad al título pero ocultarlas
                     val ciudad = parts[3]
                     val localidad = parts[4]
+
                     val tiendaLatLng = LatLng(lat, lng)
 
                     // Agregar marcador al mapa y a la lista de markers
                     val marker = mMap.addMarker(
                         MarkerOptions()
                             .position(tiendaLatLng)
-                            .title(nombre)
-                            .snippet("Ciudad: $ciudad, Localidad: $localidad") // Mostrar en el snippet si es necesario
+                            .title("$nombre, $ciudad, $localidad")
                     )
                     if (marker != null) {
                         markers.add(marker)
@@ -118,5 +116,7 @@ class mapActivity : AppCompatActivity(), OnMapReadyCallback {
             e.printStackTrace()
         }
     }
+
+
 
 }

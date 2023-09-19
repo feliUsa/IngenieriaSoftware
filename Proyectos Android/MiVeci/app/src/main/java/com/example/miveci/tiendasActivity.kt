@@ -1,10 +1,13 @@
 package com.example.miveci
 
+import android.animation.ObjectAnimator
+import android.animation.ValueAnimator
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.ImageView
 import android.widget.Spinner
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -23,6 +26,7 @@ class tiendasActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tiendas)
+        movimientoBurbujas()
 
         val recyclerView: RecyclerView = findViewById(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
@@ -41,7 +45,6 @@ class tiendasActivity : AppCompatActivity() {
 
         // Configurar adaptadores para los Spinners (debes proporcionar tus propios datos)
         val localidades = obtenerLocalidades().toMutableList()
-        localidades.add(0, "Todo")
         val localidadAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, localidades)
         localidadAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinnerLocalidad.adapter = localidadAdapter
@@ -97,11 +100,15 @@ class tiendasActivity : AppCompatActivity() {
             var line: String?
             while (reader.readLine().also { line = it } != null) {
                 val parts = line?.split(",")
-                if (parts != null && parts.size == 5) {
+                if (parts != null && parts.size == 7) {
                     val nombre = parts[0]
                     val ciudad = parts[3]
                     val localidad = parts[4]
-                    tiendas.add(Tienda(nombre, ciudad, localidad))
+                    val descripcion = parts[5]
+                    val numeroContacto = parts[6]
+                    val latitud = parts[1].toDouble()
+                    val longitud = parts[2].toDouble()
+                    tiendas.add(Tienda(nombre, ciudad, localidad, descripcion, numeroContacto, latitud, longitud))
                 }
             }
             reader.close()
@@ -110,6 +117,8 @@ class tiendasActivity : AppCompatActivity() {
         }
         return tiendas
     }
+
+
     // Funciones para filtrar tiendas por localidad y ciudad
     private fun filtrarTiendasPorLocalidad(localidad: String): List<Tienda> {
         return tiendas.filter { it.localidad == localidad }
@@ -127,6 +136,48 @@ class tiendasActivity : AppCompatActivity() {
     // Obtener una lista de todas las ciudades únicas de las tiendas
     private fun obtenerCiudades(): List<String> {
         return tiendas.map { it.ciudad }.distinct()
+    }
+
+    //Animacion Movimiento burbujas
+    private fun movimientoBurbujas(){
+        val bubble1 = findViewById<ImageView>(R.id.burbuja1)
+        val bubble2 = findViewById<ImageView>(R.id.burbuja2)
+        val bubble3 = findViewById<ImageView>(R.id.burbuja3)
+        val bubble4 = findViewById<ImageView>(R.id.burbuja4)
+        val bubble5 = findViewById<ImageView>(R.id.burbuja5)
+
+        val bubble1Animator = ObjectAnimator.ofFloat(bubble1, "translationY", 0f, 50f)
+        bubble1Animator.duration = 1000
+        bubble1Animator.repeatCount = ValueAnimator.INFINITE
+        bubble1Animator.repeatMode = ValueAnimator.REVERSE
+        bubble1Animator.start()
+
+        val bubble2Animator = ObjectAnimator.ofFloat(bubble2, "translationY", 0f, -50f)
+        bubble2Animator.duration = 1000
+        bubble2Animator.repeatCount = ValueAnimator.INFINITE
+        bubble2Animator.repeatMode = ValueAnimator.REVERSE
+        bubble2Animator.start()
+
+        val bubble3Animator = ObjectAnimator.ofFloat(bubble3, "translationY", 0f, -50f)
+        bubble3Animator.duration = 1000
+        bubble3Animator.repeatCount = ValueAnimator.INFINITE
+        bubble3Animator.repeatMode = ValueAnimator.REVERSE
+        bubble3Animator.start()
+
+        val bubble4Animator = ObjectAnimator.ofFloat(bubble4, "translationY", 0f, 50f)
+        bubble4Animator.duration = 1000
+        bubble4Animator.repeatCount = ValueAnimator.INFINITE
+        bubble4Animator.repeatMode = ValueAnimator.REVERSE
+        bubble4Animator.start()
+
+        val bubble5Animator = ObjectAnimator.ofFloat(bubble5, "translationY", 0f, -50f)
+        bubble5Animator.duration = 1000
+        bubble5Animator.repeatCount = ValueAnimator.INFINITE
+        bubble5Animator.repeatMode = ValueAnimator.REVERSE
+        bubble5Animator.start()
+
+
+
     }
 
 }

@@ -1,0 +1,55 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity_tenderos"
+    android:background="@drawable/fondo_degradado">
+
+    <RelativeLayout
+        android:orientation="vertical"
+        android:layout_width="250dp"
+        android:layout_height="500dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/fondo_con_esquinas_redondas">
+
+        <ImageView
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="40dp"
+            android:id="@+id/tiendita"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:background="@drawable/store"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tiendita"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp"
+            android:text="Mis tiendas"/>
+
+        <ImageView
+            android:id="@+id/settings"
+            android:layout_marginStart="32dp"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:layout_below="@id/tiendita"
+            android:layout_marginTop="57dp"
+            android:background="@drawable/settings_icon" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/settings"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp"
+            android:text="Configuración" />
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

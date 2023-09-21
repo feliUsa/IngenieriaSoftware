@@ -16,7 +16,7 @@ import java.io.IOException
 import java.io.InputStreamReader
 
 
-class mapActivity : AppCompatActivity(), OnMapReadyCallback {
+class mapActivity_users : AppCompatActivity(), OnMapReadyCallback {
 
     private lateinit var mapView: MapView
     private lateinit var mMap: GoogleMap
@@ -24,7 +24,7 @@ class mapActivity : AppCompatActivity(), OnMapReadyCallback {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_map)
+        setContentView(R.layout.activity_map_users)
 
         mapView = findViewById(R.id.mapView)
         mapView.onCreate(savedInstanceState)

@@ -1,6 +1,6 @@
 package com.example.miveci
 
-data class Tienda(
+data class Tienda_users(
     val nombre: String,
     val ciudad: String,
     val localidad: String,

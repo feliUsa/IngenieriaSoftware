@@ -6,15 +6,14 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import android.widget.TextView
 import java.util.Calendar
 
-class MainActivity : AppCompatActivity() {
+class MainActivity_users : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_main_users)
         mensaje_hora()
         movimientoBurbujas()
     }
@@ -36,7 +35,7 @@ class MainActivity : AppCompatActivity() {
         tiendasUuU()
     }
     fun tiendasUuU(){
-        val intent = Intent(this, tiendasActivity::class.java)
+        val intent = Intent(this, tiendasActivity_users::class.java)
         startActivity(intent)
     }
 
@@ -45,7 +44,7 @@ class MainActivity : AppCompatActivity() {
         mapUuU()
     }
     fun mapUuU(){
-        val intent = Intent(this, mapActivity::class.java)
+        val intent = Intent(this, mapActivity_users::class.java)
         startActivity(intent)
     }
     //Funcion para llamar a la actividad de configuracion
@@ -53,7 +52,7 @@ class MainActivity : AppCompatActivity() {
         configUuU()
     }
     fun configUuU(){
-        val intent = Intent(this, configActivity::class.java)
+        val intent = Intent(this, configActivity_users::class.java)
         startActivity(intent)
     }
     //Animacion Movimiento burbujas

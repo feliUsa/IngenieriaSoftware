@@ -15,13 +15,13 @@ import java.io.BufferedReader
 import java.io.IOException
 import java.io.InputStreamReader
 
-class tiendasActivity : AppCompatActivity() {
+class tiendasActivity_users : AppCompatActivity() {
 
     private lateinit var spinnerLocalidad: Spinner
     private lateinit var spinnerCiudad: Spinner
-    private lateinit var tiendasCompleta: List<Tienda>
-    private lateinit var tiendas: List<Tienda>
-    private lateinit var adapter: TiendaAdapter
+    private lateinit var tiendasCompleta: List<Tienda_users>
+    private lateinit var tiendaUsers: List<Tienda_users>
+    private lateinit var adapter: TiendaAdapter_users
 
     private var ciudadSeleccionada: String = "Ciudad"
     private var localidadSeleccionada: String = "Localidad"
@@ -29,18 +29,18 @@ class tiendasActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_tiendas)
+        setContentView(R.layout.activity_tiendas_users)
         movimientoBurbujas()
 
         val recyclerView: RecyclerView = findViewById(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
         // Leer los datos de tiendas desde el archivo
-        tiendas = readTiendasFromFile("tiendas.txt")
-        tiendasCompleta = tiendas.toList() // Copia de seguridad de todas las tiendas
+        tiendaUsers = readTiendasFromFile("tiendas.txt")
+        tiendasCompleta = tiendaUsers.toList()
 
         // Configurar el adaptador inicial para mostrar todas las tiendas
-        adapter = TiendaAdapter(tiendas,this)
+        adapter = TiendaAdapter_users(tiendaUsers,this)
         recyclerView.adapter = adapter
 
         // Obtener referencias a los Spinners
@@ -61,10 +61,10 @@ class tiendasActivity : AppCompatActivity() {
         spinnerCiudad.adapter = ciudadAdapter
 
         // Leer los datos de tiendas desde el archivo
-        tiendas = readTiendasFromFile("tiendas.txt")
+        tiendaUsers = readTiendasFromFile("tiendas.txt")
 
         // Configurar el adaptador inicial para mostrar todas las tiendas
-        adapter = TiendaAdapter(tiendas,this)
+        adapter = TiendaAdapter_users(tiendaUsers,this)
         recyclerView.adapter = adapter
 
 
@@ -101,7 +101,7 @@ class tiendasActivity : AppCompatActivity() {
 
         // Obtener una lista de todos los tipos de tiendas únicos
                 val tiposDeTienda = obtenerTiposDeTienda().toMutableList()
-                tiposDeTienda.add(0, "Tipo") // Agrega una opción para mostrar todas las tiendas
+                tiposDeTienda.add(0, "Tipo")
 
                 val tipoAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, tiposDeTienda)
                 tipoAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
@@ -128,24 +128,24 @@ class tiendasActivity : AppCompatActivity() {
         }
         adapter.actualizarLista(tiendasFiltradas)
     }
-    private fun readTiendasFromFile(fileName: String): List<Tienda> {
-        val tiendas = mutableListOf<Tienda>()
+    private fun readTiendasFromFile(fileName: String): List<Tienda_users> {
+        val tiendaUsers = mutableListOf<Tienda_users>()
         try {
             val inputStream = resources.openRawResource(R.raw.tiendas)
             val reader = BufferedReader(InputStreamReader(inputStream))
             var line: String?
             while (reader.readLine().also { line = it } != null) {
                 val parts = line?.split(";")
-                if (parts != null && parts.size == 8) { // Ahora hay 8 campos en lugar de 7
+                if (parts != null && parts.size == 8) {
                     val nombre = parts[0]
                     val ciudad = parts[3]
                     val localidad = parts[4]
-                    val tipo = parts[5] // Nuevo campo para el tipo de tienda
+                    val tipo = parts[5]
                     val descripcion = parts[6]
                     val numeroContacto = parts[7]
                     val latitud = parts[1].toDouble()
                     val longitud = parts[2].toDouble()
-                    tiendas.add(Tienda(nombre, ciudad, localidad, tipo, descripcion, numeroContacto, latitud, longitud))
+                    tiendaUsers.add(Tienda_users(nombre, ciudad, localidad, tipo, descripcion, numeroContacto, latitud, longitud))
                 }
 
             }
@@ -153,37 +153,37 @@ class tiendasActivity : AppCompatActivity() {
         } catch (e: IOException) {
             e.printStackTrace()
         }
-        return tiendas
+        return tiendaUsers
     }
 
 
     // Obtener una lista de todos los tipos de tiendas únicos de las tiendas
     private fun obtenerTiposDeTienda(): List<String> {
-        return tiendas.map { it.tipo }.distinct()
+        return tiendaUsers.map { it.tipo }.distinct()
     }
 
     // Función para filtrar tiendas por tipo
-    private fun filtrarTiendasPorTipo(tipo: String): List<Tienda> {
-        return tiendas.filter { it.tipo == tipo }
+    private fun filtrarTiendasPorTipo(tipo: String): List<Tienda_users> {
+        return tiendaUsers.filter { it.tipo == tipo }
     }
 
     // Funciones para filtrar tiendas por localidad y ciudad
-    private fun filtrarTiendasPorLocalidad(localidad: String): List<Tienda> {
-        return tiendas.filter { it.localidad == localidad }
+    private fun filtrarTiendasPorLocalidad(localidad: String): List<Tienda_users> {
+        return tiendaUsers.filter { it.localidad == localidad }
     }
 
-    private fun filtrarTiendasPorCiudad(ciudad: String): List<Tienda> {
-        return tiendas.filter { it.ciudad == ciudad }
+    private fun filtrarTiendasPorCiudad(ciudad: String): List<Tienda_users> {
+        return tiendaUsers.filter { it.ciudad == ciudad }
     }
 
     // Obtener una lista de todas las localidades únicas de las tiendas
     private fun obtenerLocalidades(): List<String> {
-        return tiendas.map { it.localidad }.distinct()
+        return tiendaUsers.map { it.localidad }.distinct()
     }
 
     // Obtener una lista de todas las ciudades únicas de las tiendas
     private fun obtenerCiudades(): List<String> {
-        return tiendas.map { it.ciudad }.distinct()
+        return tiendaUsers.map { it.ciudad }.distinct()
     }
 
     //Animacion Movimiento burbujas

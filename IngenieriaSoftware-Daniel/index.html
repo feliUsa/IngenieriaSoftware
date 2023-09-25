@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+    <head>
+        <meta charset="uft-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Datos</title>
+        <link rel="stylesheet" href="style.css">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    </head>
+
+    <body>
+            <div class="sideBar">
+
+                <div class="top">
+                    <div class="logo">
+                        <i class="bx bxl-codepen"></i>
+                        <span>Hola Veci</span>
+                    </div>
+                    <i class="bx bx-menu" id="btn"></i>
+                </div> 
+
+                <div class="user">
+                    <img src="Imagenes/logo.png" alt="logotype" class="usr-img">
+                    <div>
+                        <p class="bold">Nombre Usuario</p>
+                        <p>Admin</p>
+                    </div>
+                </div>
+
+                <ul>
+                   
+                    <li>
+                        <a href="index.html">
+                         <i class="bx bx-shield-plus"></i>
+                         <span class="nav-item">Facturación</span>
+                        </a>
+                        <span class="tooltip">Facturación</span>
+                     </li>
+
+                     <li>
+                        <a href="clientesGet.html">
+                         <i class="bx bx-search"></i>
+                         <span class="nav-item">Buscar</span>
+                        </a>
+                        <span class="tooltip">Buscar</span>
+                     </li>
+
+                     <li>
+                        <a href="#">
+                         <i class="bx bxs-shield-minus"></i>
+                         <span class="nav-item">Eliminar</span>
+                        </a>
+                        <span class="tooltip">Eliminar</span>
+                     </li>
+
+                     <li>
+                        <a href="#">
+                         <i class="bx bx-transfer-alt"></i>
+                         <span class="nav-item">Actualizar</span>
+                        </a>
+                        <span class="tooltip">Actualizar</span>
+                     </li>
+
+                     <li>
+                        <a href="#">
+                         <i class="bx bx-log-out"></i>
+                         <span class="nav-item">Salir</span>
+                        </a>
+                        <span class="tooltip">Salir</span>
+                     </li>
+
+                </ul>
+                
+            </div>
+
+        <div class="main-content">
+
+
+            <form method="POST">
+
+                <div class="client">
+                    <input type="text" name="id" required>
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label>ID</label>
+                </div>
+
+                <div class="client">      
+                    <input type="text" name="name" required>
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label>Nombre</label>
+                </div>
+
+                <div class="client">      
+                    <input type="text" name="lastName" required>
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label>Apellido</label>
+                </div>
+
+                  <div class="client">
+                    <input type="text" name="email" required>
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label>Email</label>
+                </div>
+
+                <div class="client">  
+                    <input type="text" name="address" required>
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label>Barrio</label>
+                </div>
+
+                <div class="client">    
+                    <input type="text" name="rol" required>
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label>Rol</label> 
+                </div>
+
+                <div class="client">    
+                    <input type="text" name="password" required>
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label>Contraseña</label> 
+                </div>
+
+                <div class="client">
+                    <input type="submit" name="enviar" value="Guardar">
+                </div>
+
+            </form>
+
+        </div>
+
+    </body>
+
+<script>
+    let btn = document.querySelector('#btn')
+    let sidebar = document.querySelector('.sideBar')
+
+    btn.onclick = function(){
+        sidebar.classList.toggle('active');
+    };
+</script>
+
+
+
+</html>

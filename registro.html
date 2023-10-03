@@ -4,10 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Veci</title>
+    <link rel="shortcut icon" href="./assets/faviconP.png" type="image/x-icon">
     <link rel="stylesheet" href="styleRegistro.css">
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
+    <a href="index.html">
+        <button class="highlight-button" onclick="toggleSignInForm()">Regresar</button>
+    </a>
 
     <div class="container-form sign-in">
         <form class="formulario" th:action="@{/login}" method="post">

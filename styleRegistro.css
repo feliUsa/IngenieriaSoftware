@@ -10,7 +10,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url(barrios.webp);
+    /* background-color: #070707; */
+    background-image: url('./assets/fondo1.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -33,7 +34,7 @@ body {
     padding: 1rem;
     margin: 2rem;
     border-radius: 2rem;
-    background-color: rgba(231, 85, 18, 0.602);
+    background-color: rgba(216, 208, 204, 0.602);
 }
 
 .message {
@@ -60,7 +61,7 @@ body {
 }
 
 .message button:hover {
-    background-color: #f78f07; 
+    background-color: #e4dfd7; 
 }
 
 .formulario {
@@ -68,7 +69,7 @@ body {
     padding: 1rem;
     margin: 2rem;
     border-radius: 2rem;
-    background-color: rgba(231, 85, 18, 0.602);
+    background-color: rgba(216, 208, 204, 0.602);
     text-align: center;
 }
 
@@ -98,7 +99,7 @@ body {
 }
 
 .border-icono:hover {
-    background-color: #ee4a4a;
+    background-color: #e4dfd7;
     cursor: pointer;
 }
 
@@ -167,4 +168,25 @@ select{
 .sign-up.active {
     opacity: 0;
     visibility: hidden;
+}
+
+/* Estilos para el botón en la parte superior izquierda */
+
+.highlight-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 10px;
+    font-size: 1rem;
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.highlight-button:hover {
+    background-color: #e4dfd7;
+    color: #070707;
 }

@@ -8,6 +8,15 @@ document.addEventListener("click", e=>{
         $signin.classList.toggle("active");
         $signup.classList.toggle("active")
     }
+
+    function toggleSignInForm() {
+        var signInForm = document.querySelector('.sign-in');
+        signInForm.classList.toggle('active');
+        
+        var signUpForm = document.querySelector('.sign-up');
+        signUpForm.classList.toggle('active');
+    }
+    
 })
 
 

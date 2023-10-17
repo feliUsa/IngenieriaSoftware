@@ -1,7 +1,5 @@
 package com.holaveci.RegisterLogin.Dto;
 
-import jakarta.persistence.Column;
-
 public class EmployeeDTO {
 
     private int employeeid;

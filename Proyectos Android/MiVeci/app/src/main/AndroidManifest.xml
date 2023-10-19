@@ -2,8 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -14,39 +16,48 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MiVeci"
+        android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity_tenderos"
+            android:name=".tenderos.configActivity_tenderos"
             android:exported="false" />
         <activity
-            android:name=".Inicio_Sesion_Tenderos"
+            android:name=".tenderos.Registro_Tenderos"
             android:exported="false" />
         <activity
-            android:name=".Inicio_Sesion_users"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-
+            android:name=".Registo_Usuarios"
+            android:exported="false" />
+        <activity
+            android:name=".tenderos.AgregarTiendasTenderos"
+            android:exported="false" />
+        <activity
+            android:name=".tenderos.MainActivity_tenderos"
+            android:exported="false" />
+        <activity
+            android:name=".tenderos.Inicio_Sesion_Tenderos"
+            android:exported="false" />
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyAsp73nE5njfD6Ojx7Vv9cEB5nOGRgL_nc" />
 
         <activity
-            android:name=".configActivity_users"
+            android:name=".usuarios.configActivity_users"
             android:exported="false" />
         <activity
-            android:name=".mapActivity_users"
+            android:name=".usuarios.mapActivity_users"
             android:exported="false" />
         <activity
-            android:name=".tiendasActivity_users"
+            android:name=".usuarios.tiendasActivity_users"
             android:exported="false" />
         <activity
-            android:name=".MainActivity_users"
-            android:exported="false" />
+            android:name=".usuarios.MainActivity_users"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
     </application>
 
 </manifest>

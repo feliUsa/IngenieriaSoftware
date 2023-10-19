@@ -4,7 +4,40 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".configActivity_users"
-    android:background="@drawable/fondo_degradado">
+    tools:context=".usuarios.configActivity_users"
+    android:background="@color/gris_claro">
+
+    <ImageView
+        android:id="@+id/comida"
+        android:layout_width="400dp"
+        android:layout_height="400dp"
+        android:background="@drawable/comida3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RelativeLayout
+        android:id="@+id/Inicio_Sesion_Tenderos"
+        android:layout_width="394dp"
+        android:layout_height="76dp"
+        android:background="@drawable/fondo_con_esquinas_redondas"
+        android:onClick="Inicio_Sesion_Tenderos"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.943">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Inicia Sesion como Tendero"
+            android:textAlignment="center"
+            android:textSize="30dp"
+            android:layout_centerInParent="true"/>
+
+    </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

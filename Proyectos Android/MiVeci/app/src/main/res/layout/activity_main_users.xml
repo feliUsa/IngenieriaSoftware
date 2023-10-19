@@ -4,60 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity_users"
-    android:background="@drawable/fondo_degradado">
+    tools:context=".usuarios.MainActivity_users"
+    android:background="@color/gris_claro">
 
-    <!--Imagenes burbujas -->
-    <ImageView
-        android:id="@+id/burbuja1"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:background="@drawable/circulos"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:animateLayoutChanges="true"/>
-    <ImageView
-        android:id="@+id/burbuja5"
-        android:layout_marginStart="-200dp"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:layout_marginTop="600dp"
-        android:animateLayoutChanges="true"
-        android:background="@drawable/circulos"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-    <ImageView
-        android:id="@+id/burbuja2"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_marginStart="252dp"
-        android:layout_marginTop="108dp"
-        android:background="@drawable/circulos"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:animateLayoutChanges="true"/>
-    <ImageView
-        android:id="@+id/burbuja3"
-        android:layout_width="261dp"
-        android:layout_height="265dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="280dp"
-        android:background="@drawable/circulos"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:animateLayoutChanges="true"/>
-    <ImageView
-        android:id="@+id/burbuja4"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:layout_marginStart="152dp"
-        android:layout_marginTop="584dp"
-        android:background="@drawable/circulos"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:animateLayoutChanges="true"/>
 
     <!-- Layout Para Mensaje Bievenida -->
+
+    <ImageView
+        android:id="@+id/imag1"
+        android:layout_width="1200dp"
+        android:layout_height="845dp"
+        android:background="@drawable/comida2"
+        android:layout_marginEnd="-100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <RelativeLayout
         android:id="@+id/relativeLayout"
         android:layout_width="344dp"
@@ -89,6 +50,7 @@
     </RelativeLayout>
     <!-- Layout para Escoger opciones -->
     <LinearLayout
+        android:id="@+id/Linear1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/fondo_con_esquinas_redondas"
@@ -123,7 +85,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
                     android:text="Perfil"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:textColor="@color/black"/>
             </LinearLayout>
             <!-- Layout tiendas -->
             <LinearLayout
@@ -146,7 +109,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
                     android:text="Tienditas"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:textColor="@color/black"/>
             </LinearLayout>
 
         </LinearLayout>
@@ -176,7 +140,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
                     android:text="Mapa"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:textColor="@color/black"/>
             </LinearLayout>
             <!-- Layout Settings -->
             <LinearLayout
@@ -199,7 +164,8 @@
                     android:layout_marginStart="30dp"
                     android:layout_marginBottom="30dp"
                     android:text="Configuraciones"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:textColor="@color/black"/>
             </LinearLayout>
 
         </LinearLayout>
